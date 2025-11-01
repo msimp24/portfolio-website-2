@@ -8,25 +8,29 @@
 </div>
 
 <div class="container">
-  <div class="projects-grid">
-    <% projects.forEach((project) =>{%>
+  <div class="row">
+    <div class="col">
+      <div class="projects-grid">
+        <% projects.forEach((project) =>{%>
 
-    <a class="project-link" href="/projects/<%-project.slug%>">
-      <div class="project-card">
-        <img src="<%-project.img%>" alt="" />
-        <div>
-          <h3><%-project.title %></h3>
-          <p><%-project.desc %></p>
-          <div class="tech-wrapper">
-            <% project.tech.forEach((tech) =>{%>
+        <a class="project-link" href="/projects/<%-project.slug%>">
+          <div class="project-card">
+            <img src="<%-project.img%>" alt="" />
+            <div>
+              <h3><%-project.title %></h3>
+              <p><%-project.desc %></p>
+              <div class="tech-wrapper">
+                <% project.tech.forEach((tech) =>{%>
 
-            <span class="tech-pill"><%-tech %> </span>
+                <span class="tech-pill"><%-tech %> </span>
 
-            <% }) %>
+                <% }) %>
+              </div>
+            </div>
           </div>
-        </div>
+        </a>
+        <% })%>
       </div>
-    </a>
-    <% })%>
+    </div>
   </div>
 </div>

@@ -756,4 +756,11 @@ img {
     text-align: center;
     font-size: var(--font-size-xl);
   }
+
+  .btn-container {
+    justify-content: center;
+  }
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
 }

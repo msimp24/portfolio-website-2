@@ -1,0 +1,28 @@
+{
+  "name": "portfolio-website-2",
+  "version": "1.0.0",
+  "description": "Portfolio Website",
+  "keywords": [
+    "Mark",
+    "Simpson",
+    "portfolio"
+  ],
+  "license": "MIT",
+  "author": "Mark Simpson",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.10",
+    "path": "^0.12.7",
+    "resend": "^6.4.0",
+    "sqlite3": "^5.1.7"
+  }
+}

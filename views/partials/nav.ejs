@@ -1,0 +1,44 @@
+<nav class="nav" x-data="navComponent()">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="/" class="logo">
+        <i class="fa-solid fa-code"></i>
+        <h1>Mark Simpson</h1>
+      </a>
+
+      <ul class="nav-links">
+        <li><a :class="{ 'active': active=='' }" href="/">Home</a></li>
+        <li>
+          <a :class="{ 'active': active=='about' }" href="/about">About</a>
+        </li>
+        <li>
+          <a :class="{ 'active': active=='projects' }" href="/projects"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a :class="{ 'active': active=='contact' }" href="/contact"
+            >Contact</a
+          >
+        </li>
+      </ul>
+
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/mark-simpson-230162145/"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        <a href="https://github.com/msimp24">
+          <i class="fa-brands fa-github"></i
+        ></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  function navComponent() {
+    return {
+      active: window.location.pathname.split('/').pop(),
+    }
+  }
+</script>

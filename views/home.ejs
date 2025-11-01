@@ -1,0 +1,162 @@
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col home-col">
+        <h1 class="home-h1">Full Stack Developer</h1>
+        <p class="home-p">
+          Full-Stack Developer with a main focus on scalable APIs, database
+          design, and Python ETL workflows.
+        </p>
+        <div class="btn-container">
+          <a class="btn primary-btn" href="/projects">
+            View My Work <span class="material-icons">arrow_forward</span>
+          </a>
+          <a href="/contact" class="btn secondary-btn">Get in Touch</a>
+        </div>
+      </div>
+      <div class="col">
+        <img class="home-img" src="/images/linked-in-profile.jpg" alt="home" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col about-me-col">
+        <img class="about-me-img" src="/images/celly.png" alt="" />
+      </div>
+      <div class="col home-col">
+        <h1 class="primary-h1">About Me</h1>
+        <p class="about-me-p">
+          I'm a former professional hockey player transitioning into my IT
+          career, bringing the discipline, resilience, and teamwork gained from
+          competing at a high level. My hockey career took me around the world,
+          where I developed strong leadership skills and the ability to perform
+          under pressure.
+          <br /><br />
+          I earned my Bachelor of Computer Science from the University of New
+          Brunswick in 2020 and continued building my technical skills through
+          freelance work and ongoing personal projects while playing
+          professionally. I'm now focused on applying that experience and my
+          engineering foundation to a full-time role, contributing to meaningful
+          products and continuing to grow as a developer.
+        </p>
+        <div class="btn-container">
+          <a href="/about" class="btn secondary-btn"
+            >More About Me <span class="material-icons">arrow_forward</span></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" x-data="homeComponent()">
+  <div class="container">
+    <h1 class="primary-h1">What I can do</h1>
+    <div class="grid-container">
+      <template x-for="skill in skills">
+        <div class="skill-card">
+          <div>
+            <span class="material-symbols-outlined" x-text="skill.icon"></span>
+          </div>
+          <h3 x-text="skill.title"></h3>
+          <p x-text="skill.description"></p>
+        </div>
+      </template>
+    </div>
+  </div>
+</section>
+
+<section class="section" x-data="techComponent()">
+  <div class="container">
+    <h1 class="primary-h1">My Toolbox</h1>
+    <p class="home-p">Languages, frameworks, and tools I reach for</p>
+    <div class="pill-container">
+      <template x-for="pill in technologies">
+        <div class="pills" x-text="pill"></div>
+      </template>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="header">
+      <h1>Let's Work Together</h1>
+      <p>Get in touch with me today</p>
+      <div class="btn-container">
+        <a href="/contact" class="btn primary-btn">Get in Touch</a>
+        <a href="/projects" class="btn secondary-btn">View My Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function homeComponent() {
+    return {
+      skills: [
+        {
+          title: 'Backend API Development',
+          description:
+            'Design and build scalable REST APIs with secure authentication, clean architecture, and maintainable code.',
+          icon: 'api',
+        },
+        {
+          title: 'Database Design & Optimization',
+          description:
+            'Design relational database schemas, write efficient SQL queries, and build data-driven features with SQLite & MySQL.',
+          icon: 'database',
+        },
+        {
+          title: 'Python Automation & Data Workflows',
+          description:
+            'Build automation scripts and data workflows using Python for reporting, notifications, and operational efficiency.',
+          icon: 'terminal',
+        },
+        {
+          title: 'Full Stack Development',
+          description:
+            'Develop end-to-end applications using Node.js, Express, EJS/Alpine/Vue, and modern deployment tooling.',
+          icon: 'devices',
+        },
+        {
+          title: 'System Architecture & Scalability',
+          description:
+            'Plan and structure applications for scalability, performance, and long-term maintainability.',
+          icon: 'schema',
+        },
+        {
+          title: 'CI, Testing & Deployment',
+          description:
+            'Version control, API testing with Postman, and modern deployment workflows.',
+          icon: 'rocket_launch',
+        },
+      ],
+    }
+  }
+
+  function techComponent() {
+    return {
+      technologies: [
+        'Javascript',
+        'Node JS',
+        'Express JS',
+        'SQLite',
+        'Python',
+        'REST APIs',
+        'Vue JS',
+        'Alpine JS',
+        'EJS',
+        'HTML',
+        'CSS',
+        'Java',
+        'C',
+        'Postman',
+        'Pandas',
+      ],
+    }
+  }
+</script>

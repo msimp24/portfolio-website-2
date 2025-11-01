@@ -1,0 +1,56 @@
+<div class="page-hero">
+  <div class="container">
+    <div class="btn-container">
+      <a href="/projects" class="btn secondary-btn"
+        ><span class="material-symbols-outlined">arrow_back</span>Back to
+        Projects</a
+      >
+      <span></span>
+    </div>
+    <div class="projects-header">
+      <h1><%- project.title %></h1>
+      <p><%-project.shortDesc %></p>
+    </div>
+    <div class="btn-container">
+      <a href="<%-project.websiteLink%>" class="btn primary-btn"
+        ><span class="material-icons">visibility</span>View Live Project</a
+      >
+    </div>
+    <img class="details-img" src="<%-project.img%>" alt="" />
+  </div>
+</div>
+<section class="project-details-section">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h3 class="h3-text">About this project</h3>
+        <br />
+        <p class="about-p"><%-project.description%></p>
+      </div>
+      <div class="col">
+        <div class="details-wrapper">
+          <h3 class="h3-text">Key Features</h3>
+          <ul class="feature-list">
+            <%project.keyFeatures.forEach((feature) =>{%>
+
+            <li class="feature">
+              <span class="material-symbols-outlined">check</span><%-feature%>
+            </li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h3 class="h3-text">Tech</h3>
+        <div class="pill-container">
+          <%project.tech.forEach((pill) =>{%>
+
+          <div class="pills"><%- pill%></div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

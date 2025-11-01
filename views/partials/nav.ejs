@@ -6,7 +6,7 @@
         <h1>Mark Simpson</h1>
       </a>
 
-      <ul class="nav-links">
+      <ul class="nav-links" :class="open ? 'open' : ''">
         <li><a :class="{ 'active': active=='' }" href="/">Home</a></li>
         <li>
           <a :class="{ 'active': active=='about' }" href="/about">About</a>
@@ -22,8 +22,20 @@
           >
         </li>
       </ul>
+      <span
+        class="material-icons"
+        id="close"
+        :class="open ? 'open' : ''"
+        x-show="open"
+        @click="open = !open"
+        >close</span
+      >
 
-      <div class="socials">
+      <span class="material-icons" id="menu" x-show="!open" @click="open=true"
+        >menu</span
+      >
+
+      <div class="socials" :class="open ? 'open' : ''">
         <a href="https://www.linkedin.com/in/mark-simpson-230162145/"
           ><i class="fa-brands fa-linkedin"></i
         ></a>
@@ -39,6 +51,7 @@
   function navComponent() {
     return {
       active: window.location.pathname.split('/').pop(),
+      open: false,
     }
   }
 </script>

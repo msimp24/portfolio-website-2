@@ -1,0 +1,188 @@
+<div class="page-hero">
+  <div class="container">
+    <div class="header">
+      <h1>Get in Touch</h1>
+      <p>I'm always open to discussing new opportunities and projects</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3 class="h3-text">Let's Connect</h3>
+      <p class="about-p">
+        I'm currently seeking opportunities as a Backend Developer or Data
+        Engineer. If you have a project you'd like to discuss or just want to
+        say hi, feel free to reach out through the form or connect with me on
+        social media.
+      </p>
+      <div class="col">
+        <div class="contact-card">
+          <span class="material-symbols-outlined contact-icon">mail</span>
+          <div>
+            <h3>Email</h3>
+            <a href="mailto:mark.simpson4@gmail.com" class="contact-link"
+              >mark.simpson4@gmail.com</a
+            >
+          </div>
+        </div>
+        <div class="contact-card">
+          <span class="material-symbols-outlined contact-icon"
+            >connect_without_contact</span
+          >
+          <div>
+            <h3>LinkedIn</h3>
+            <a
+              href="https://www.linkedin.com/in/mark-simpson-230162145/"
+              class="contact-link"
+              >https://www.linkedin.com/in/mark-simpson-230162145/</a
+            >
+          </div>
+        </div>
+        <div class="contact-card">
+          <span class="material-symbols-outlined contact-icon">code</span>
+          <div>
+            <h3>GitHub</h3>
+            <a href="https://github.com/msimp24" class="contact-link"
+              >https://github.com/msimp24</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col" x-data="contactComponent()">
+      <form @submit.prevent="sendEmail" class="form">
+        <div class="multi-row">
+          <div class="form-wrapper">
+            <label>First Name</label>
+            <input type="text" x-model="firstName" />
+            <p
+              x-show="errors.firstName"
+              x-text="errors.firstName"
+              class="error-text"></p>
+          </div>
+          <div class="form-wrapper">
+            <label>Last Name</label>
+            <input type="text" x-model="lastName" />
+            <p
+              x-show="errors.lastName"
+              x-text="errors.lastName"
+              class="error-text"></p>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <label>Email</label>
+          <input type="text" x-model="email" />
+          <p x-show="errors.email" x-text="errors.email" class="error-text"></p>
+        </div>
+        <div class="form-wrapper">
+          <label>Subject</label>
+          <input type="text" x-model="subject" />
+          <p
+            x-show="errors.subject"
+            x-text="errors.subject"
+            class="error-text"></p>
+        </div>
+        <div class="form-wrapper">
+          <label>Message</label>
+          <textarea type="text" x-model="message"></textarea>
+          <p
+            x-show="errors.message"
+            x-text="errors.message"
+            class="error-text"></p>
+          <p
+            x-show="errors.server"
+            x-text="errors.server"
+            class="error-text"></p>
+        </div>
+        <button class="btn primary-btn">
+          <span class="material-icons">send</span>Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  function contactComponent() {
+    return {
+      firstName: '',
+      lastName: '',
+      email: '',
+      subject: '',
+      message: '',
+
+      errors: {},
+
+      validateEmail(email) {
+        let regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+        return regex.test(email)
+      },
+
+      async sendEmail() {
+        let isValid = true
+        this.errors = {}
+
+        if (!this.firstName.trim()) {
+          this.errors.firstName = 'First Name is a required field'
+          isValid = false
+        }
+
+        if (!this.lastName.trim()) {
+          this.errors.lastName = 'Last Name is a required field'
+          isValid = false
+        }
+
+        if (!this.subject.trim()) {
+          this.errors.subject = 'Subject is a required field'
+          isValid = false
+        }
+
+        if (!this.email.trim()) {
+          this.errors.email = 'Email is a required field'
+          isValid = false
+        } else if (!this.validateEmail(this.email)) {
+          this.errors.email = 'Not a valid email address'
+          isValid = false
+        }
+
+        if (!this.message.trim()) {
+          this.errors.message = 'Message is a required field'
+          isValid = false
+        } else if (this.message.length < 40) {
+          this.errors.message = 'Message must have at least 40 characters'
+          isValid = false
+        }
+
+        if (!isValid) return
+
+        try {
+          const response = await fetch(`/send-email`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email: this.email,
+              firstName: this.firstName,
+              lastName: this.lastName,
+              message: this.message,
+              subject: this.subject,
+            }),
+          })
+
+          const json = await response.json()
+
+          if (!response.ok) {
+            this.errors.server = json.error || 'Server error. Try again.'
+            return
+          }
+
+          alert('Message successfully sent!')
+          window.location.href = '/'
+        } catch (err) {
+          this.errors.server = 'Network error. Try again.'
+        }
+      },
+    }
+  }
+</script>

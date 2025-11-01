@@ -757,6 +757,10 @@ img {
     font-size: var(--font-size-xl);
   }
 
+  .about-me-img {
+    transform: none;
+  }
+
   .btn-container {
     justify-content: center;
   }

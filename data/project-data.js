@@ -1,5 +1,13 @@
 let data = [
   {
+    title: 'Hockey-ETL API',
+    desc: 'ExpressJS API providing real-time hockey data (standings, matchups, players) and a nightly email subscription service.',
+    img: '/images/hockey-etl-1.jpg',
+    tech: ['ExpressJS', 'Python', 'SQLite3', 'NodeJS', 'Pandas'],
+    slug: 'hockey-etl-api',
+    link: 'https://hockey-stats-api.duckdns.org',
+  },
+  {
     title: 'Effortless HQ – Invoicing Platform',
     desc: 'Small-business invoicing system with automated job → invoice → email workflows, employee accounts, dashboards, and PocketBase authentication.',
     img: '/images/effortlesshq.png',
@@ -35,6 +43,35 @@ let data = [
 ]
 
 let projectDetails = [
+  {
+    title: 'Hockey-ETL API',
+    slug: 'hockey-etl-api',
+    shortDesc:
+      'Full-stack ETL pipeline and API for scraping, processing, and serving professional hockey statistics.',
+    description:
+      'The Hockey-ETL API is a robust system designed to scrape, clean, and serve professional hockey data. It consists of a nightly Python ETL pipeline that extracts raw data, cleans it using Pandas, and loads it into a central SQLite3 database. The data is then exposed via a high-performance ExpressJS API with endpoints for standings, matchups, players, and teams. The platform also includes a service for a user to subscribe to and uses Resend to deliver game scores to every morning.',
+    keyFeatures: [
+      'Nightly Python ETL jobs to update the database',
+      'RESTful API endpoints for Standings, Matchups, Players, Goalies, and Teams',
+      'SQLite3 database for persistent, clean data storage',
+      "Automated email subscription service for previous night's scores (Resend)",
+      'Data cleaning and processing via Pandas (Python)',
+      'Full production deployment on Digital Ocean with ExpressJS backend',
+    ],
+    tech: [
+      'ExpressJS',
+      'Node.js',
+      'Python',
+      'SQLite3',
+      'Pandas',
+      'Postman',
+      'Resend',
+      'DigitalOcean',
+      'JavaScript',
+    ],
+    websiteLink: 'https://hockey-stats-api.duckdns.org', // Placeholder for the live link
+    img: '/images/hockey-etl-2.jpg',
+  },
   {
     title: 'Effortless HQ – Invoicing App',
     slug: 'effortless-hq',

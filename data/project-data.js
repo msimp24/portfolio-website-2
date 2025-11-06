@@ -7,14 +7,7 @@ let data = [
     slug: 'hockey-etl-api',
     link: 'https://hockey-stats-api.duckdns.org',
   },
-  {
-    title: 'Effortless HQ – Invoicing Platform',
-    desc: 'Small-business invoicing system with automated job → invoice → email workflows, employee accounts, dashboards, and PocketBase authentication.',
-    img: '/images/effortlesshq.png',
-    tech: ['ExpressJS', 'NodeJS', 'EJS', 'Alpine JS', 'Pocketbase'],
-    slug: 'effortless-hq',
-    link: 'https://effortless-hq.com',
-  },
+
   {
     title: 'Effortless HQ – Invoicing Platform',
     desc: 'Small-business invoicing system with automated job → invoice → email workflows, employee accounts, dashboards, and PocketBase authentication.',

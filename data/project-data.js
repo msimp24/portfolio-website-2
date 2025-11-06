@@ -16,6 +16,14 @@ let data = [
     link: 'https://effortless-hq.com',
   },
   {
+    title: 'Effortless HQ – Invoicing Platform',
+    desc: 'Small-business invoicing system with automated job → invoice → email workflows, employee accounts, dashboards, and PocketBase authentication.',
+    img: '/images/effortlesshq.png',
+    tech: ['ExpressJS', 'NodeJS', 'EJS', 'Alpine JS', 'Pocketbase'],
+    slug: 'effortless-hq',
+    link: 'https://effortless-hq.com',
+  },
+  {
     title: 'HomR – Real-Estate Platform (In Progress)',
     desc: 'Full-stack real-estate platform for homeowners to list properties, manage offers, and collaborate with service partners.',
     img: '/images/homr-1.png',

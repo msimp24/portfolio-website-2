@@ -22,7 +22,7 @@ let data = [
     img: '/images/homr-1.png',
     tech: ['NodeJS', 'ExpressJS', 'PocketBase', 'EJS', 'Alpine.js'],
     slug: 'homr',
-    link: 'http://159.203.30.183:1000',
+    link: 'https://homer-mwed.onrender.com',
   },
   {
     title: 'Hockey Life Abroad',

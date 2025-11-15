@@ -1,5 +1,13 @@
 let data = [
   {
+    title: 'Effortless HQ – Invoicing Platform',
+    desc: 'Small-business invoicing system with automated job → invoice → email workflows, employee accounts, dashboards, and PocketBase authentication.',
+    img: '/images/effortlesshq.png',
+    tech: ['ExpressJS', 'NodeJS', 'EJS', 'Alpine JS', 'Pocketbase'],
+    slug: 'effortless-hq',
+    link: 'https://effortless-hq.com/home',
+  },
+  {
     title: 'Hockey-ETL API',
     desc: 'ExpressJS API providing real-time hockey data (standings, matchups, players) and a nightly email subscription service.',
     img: '/images/hockey-etl-1.jpg',
@@ -8,14 +16,6 @@ let data = [
     link: 'https://hockey-stats-api.duckdns.org',
   },
 
-  {
-    title: 'Effortless HQ – Invoicing Platform',
-    desc: 'Small-business invoicing system with automated job → invoice → email workflows, employee accounts, dashboards, and PocketBase authentication.',
-    img: '/images/effortlesshq.png',
-    tech: ['ExpressJS', 'NodeJS', 'EJS', 'Alpine JS', 'Pocketbase'],
-    slug: 'effortless-hq',
-    link: 'https://effortless-hq.com',
-  },
   {
     title: 'HomR – Real-Estate Platform (In Progress)',
     desc: 'Full-stack real-estate platform for homeowners to list properties, manage offers, and collaborate with service partners.',

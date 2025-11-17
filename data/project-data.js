@@ -101,7 +101,7 @@ let projectDetails = [
       'DigitalOcean',
       'Stripe',
     ],
-    websiteLink: 'https://effortless-hq.com',
+    websiteLink: 'https://effortless-hq.com/home',
     img: '/images/effortlesshq-2.png',
   },
 
